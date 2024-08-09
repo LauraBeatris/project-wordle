@@ -1,14 +1,14 @@
 import { NUM_OF_LETTERS } from "../../constants";
 import { range } from "../../utils";
 
-function GuessSlot({ guess }) {
+function Guess({ result }) {
   const lettersLength = range(0, NUM_OF_LETTERS);
 
   return (
     <p className="guess">
-      {guess ? (
-        guess.value.split("").map((letter, index) => (
-          <span key={index} className="cell">
+      {result ? (
+        result.value.map(({ letter, status }, index) => (
+          <span key={index} className={`cell ${status}`}>
             {letter}
           </span>
         ))
@@ -23,4 +23,4 @@ function GuessSlot({ guess }) {
   );
 }
 
-export default GuessSlot;
+export default Guess;
