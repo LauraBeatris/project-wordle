@@ -19,8 +19,8 @@ function Game() {
 
   return (
     <>
-      <GuessInput onSubmit={onSubmit} />
       <GuessResults guesses={guesses} />
+      <GuessInput onSubmit={onSubmit} />
     </>
   );
 }
